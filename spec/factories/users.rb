@@ -5,6 +5,8 @@ FactoryGirl.define do
     password "topsecret"
     password_confirmation "topsecret"
 
+    confirmed_at { Time.current }
+
     trait :with_admin do
       after(:create) do |user|
         user.add_role(:admin)
@@ -13,10 +15,6 @@ FactoryGirl.define do
 
     trait :with_oauth_account do
       oauth_account
-    end
-
-    after(:create) do |user|
-      user.confirm
     end
   end
 end
