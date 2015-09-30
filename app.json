@@ -1,8 +1,8 @@
 {
   "name": "Dasherize",
-  "description": "Dasherize is a beautiful material-based dashboard for your projects which provides you with an overview of open Pull Requests and Issues, and statuses of your CI, all on a single web page.",
+  "description": "Dasherize is a simple and beautiful material-based dashboard for your projects.",
   "repository": "https://github.com/jollygoodcode/dasherize",
-  "logo": "TBA",
+  "logo": "https://cloud.githubusercontent.com/assets/1000669/10200839/41b802ac-67db-11e5-8427-3da4b1264fe4.jpg",
   "keywords": ["ruby", "rails", "dashboard", "github", "travis", "codeship", "ci"],
   "env": {
     "WWW_HOSTNAME": {
