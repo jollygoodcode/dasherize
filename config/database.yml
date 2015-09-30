@@ -84,6 +84,3 @@ test:
 production:
   <<: *default
   database: dasherize_production
-  username: dasherize
-  password: <%= ENV['DASHERIZE_DATABASE_PASSWORD'] %>
-  url: <%= ENV.fetch('DATABASE_URL') if Rails.env.production? %>

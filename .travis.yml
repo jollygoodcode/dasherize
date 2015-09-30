@@ -1,0 +1,18 @@
+language: ruby
+sudo: false
+rvm:
+  - 2.2.3
+cache:
+  bundler: true
+  bundler_args: --jobs=3 --retry=3 --without development
+before_script:
+  - psql -c 'create database dasherize_test;' -U postgres
+  - bin/setup
+script:
+  - bin/rspec
+services:
+  - redis-server
+notifications:
+  email: false
+  slack:
+    secure: gTDbTpguWJc40Nh++6wC8PqXgKZ4opBvadPCWs7i4JVR2cn6E7aPrVQCOXpJK67glrUQfCYbj8uP2+EcbyZikVsRwoBM1ACRkpycPpzhNrirU3V8UBAMn3yHa1/xE0/gEmlA9D6MDiRxtj77i38ncaevTUHC/WW9A7aZtbx/k+t+NQnLnkShUdk2T1M8EJ7RYz9yOLC5Bs2Gcu+r176DoeO03y5viYZW4BR/ZbR1jJ194oCN4qA3RHMrnjj7hnY2nq0MzGLw+Gemck9/yrl1acJ1eNuBNMgpUyOJHwCv9X0yv0r3ONZfZT8H7ontB0gkIMN3pGJD7b9uFs5vbXiJajdraSzQRPSqk7BoNtfq1PLkDRru+gupa0EsFAvt366m0dPmM1cv020XhbJ2kJz+8LNqJGhWUw97iJAHesqYkmPnAt6z8WU5WedpE4qYjPHVi3v39k1W7OdrlFFfwY+1vSSDwJ+9YLY9UyeyVwqb6zKvxhxBtCOYwJ74voL8X0oANNrxALuMZp4XfPOGxK5vGXTVSYy3xPQYkhrjWNmwT5P8LhdEYSmlFyjPonoIo47uH4yyYMhf0nMB4yMf9QyGGdiCEqfLZdY1lKw+6l8wZH4KznTrV58yn60erAy1+jSn8Gd7/6aZfWrqdcVHBTrzLixJdAyIwbiBMQVPS/jym5A=
