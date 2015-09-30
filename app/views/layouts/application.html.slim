@@ -1,0 +1,98 @@
+doctype 5
+html(lang="en")
+  head
+    title= content_for?(:title) ? yield(:title) : "Dasherize"
+
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    meta(name="description" content="Dasherize is a beautiful material-based dashboard for your projects which provides you with an overview of open Pull Requests and Issues, and statuses of your CI, all on a single web page.")
+    meta(name="keywords" content="ruby, rails, dashboard, github, travis, codeship, ci, open source")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+
+    /![if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"
+    = javascript_include_tag  "application", "data-turbolinks-track" => true
+
+    = stylesheet_link_tag     "application", media: "all", "data-turbolinks-track" => true
+    = favicon_link_tag "favicon.ico", rel: "shortcut icon"
+
+    = csrf_meta_tags
+
+    javascript:
+      $(document).on("page:change", function() {
+        // only for `/projects` and `/projects/123`
+        if (window.location.pathname.match(/projects[\/\d+]*$/)) {
+          var handler =
+            setTimeout(function() {
+              console.log("reloading");
+              window.location.reload(true);
+            }, 300000);
+
+          $(document).on("page:fetch", function() { clearTimeout(handler); });
+        }
+      });
+
+  body class=(page_class + " presentation" if params[:mode] == "presentation")
+    nav
+      .container
+        .nav-wrapper
+          a.brand-logo.mar-sm-left(href=root_path) Dasherize
+          = link_to "#", class: "button-collapse", data: { activates: "nav-mobile" } do
+            i.material-icons menu
+
+          ul.right.hide-on-med-and-down.thin
+            - if user_signed_in?
+              li= link_to icon("user", current_user.name, class: "left")
+              li data-spec="new-project"
+                = link_to icon("plus", "New Project", class: "left"), new_project_path
+              li data-spec="presentation"
+                = link_to icon("laptop", "Presentation", class: "left"), projects_path(mode: :presentation)
+              li data-spec="sign-out"
+                = link_to icon("sign-out" , "Sign Out", class: "left"), destroy_user_session_path, method: :delete
+            - else
+              li data-spec="sign-in"
+                = link_to icon("sign-in", "Sign In with GitHub", class: "left"), "/users/auth/github"
+
+        ul#nav-mobile.side-nav
+          - if user_signed_in?
+            li= link_to "Hi #{current_user.name}!", ""
+            li= link_to "New Project" , new_project_path
+            li= link_to "Presentation", projects_path(mode: :presentation)
+            li= link_to "Sign Out"    , destroy_user_session_path, method: :delete
+          - else
+            li= link_to "Sign In with GitHub", "/users/auth/github"
+
+    .content
+      .row
+        .col.s12
+          = yield
+
+    footer.page-footer.thin
+      .container.white-text
+        .row
+          .col.s12.l6
+            h5 About Dasherize
+            p
+              ' Dasherize is a beautiful material-based dashboard for your projects
+              ' which provides you with an overview of open Pull Requests and Issues, and statuses of your CI, all on a single web page.
+            p
+              ' Currently supports GitHub, Travis and CodeShip.
+
+          .col.s12.l4.offset-l2
+            h5 Contact Us
+            ul
+              li
+                => icon("laptop")
+                ' &nbsp;
+                => link_to "Jolly Good Code", "http://www.jollygoodcode.com"  , class: "grey-text text-lighten-4"
+              li
+                => icon("envelope-o")
+                ' &nbsp;
+                => link_to "hello@jollygoodcode.com", "mailto:hello@jollygoodcode.com", class: "grey-text text-lighten-4"
+
+      .footer-copyright
+        .container.center
+          ' Built with #{icon("heart")} by Jolly Good Code
+
+    = javascript_initialization

@@ -1,0 +1,49 @@
+nav {
+  background-color: color('light-blue', 'lighten-2');
+}
+
+footer.page-footer {
+  background-color: color('light-blue', 'lighten-2');
+}
+
+.input-field {
+  @extend .col;
+  @extend .s12;
+}
+
+.error-block {
+  margin: -10px 0 0 0.75rem;
+
+  font-size: 0.8rem;
+  font-weight: 400;
+
+  color: color('red', 'base');
+}
+
+.help-block {
+  margin: -10px 0 0 0;
+
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 300;
+  color: color('grey', 'base');
+}
+
+.error-block + .help-block {
+  margin-top: 2px;
+}
+
+
+.presentation {
+  nav,
+  footer,
+  .card-content,
+  .gear
+  {
+    display: none;
+  }
+
+  .mar-lg-top {
+    margin: 0;
+  }
+}

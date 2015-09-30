@@ -1,0 +1,132 @@
+.project {
+  .card-panel {
+    font-weight: 300;
+  }
+
+  .card-heading {
+    padding: 20px;
+    color: white;
+
+    a {
+      color: white;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .card-title {
+    overflow: hidden;
+
+    .name {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+
+    .org_user {
+      font-size: 1.2rem;
+      font-weight: 200;
+    }
+
+    .right a { color: color("grey", "lighten-1") }
+  }
+
+  .card-overview {
+    display: block;
+    overflow: hidden;
+
+    padding: 40px 0 0 0;
+  }
+
+  .number {
+    font-size: 2.75rem;
+    font-weight: 200;
+    line-height: 1.25em;
+  }
+
+  .number-title {
+    font-size: 1.25rem;
+    font-weight: 200;
+  }
+
+  .card-status {
+    padding: 5px 20px;
+    color: white;
+
+    font-size: 0.65rem;
+    font-style: italic;
+  }
+
+  .card-content {
+    padding: 20px;
+
+    font-size: 0.9rem;
+  }
+
+  .collection {
+    min-height: 161px;
+    border: none;
+
+    margin-bottom: 0;
+
+    .collection-item {
+      line-height: 1.1rem;
+      padding: 10px 20px;
+
+      // Avatar Collection
+      &.avatar {
+        min-height: 0;
+        padding-left: 45px;
+
+        .circle {
+          width: 32px;
+          height: 32px;
+          left: 0;
+        }
+
+        .title, p {
+          font-size: 0.85rem
+        }
+      }
+    }
+  }
+}
+
+.card-heading {
+  &.card-default {
+    background: color("blue", "darken-1");
+  }
+  &.card-success {
+    background: color("green", "darken-1");
+  }
+  &.card-in-progress {
+    background: color("yellow", "darken-1");
+  }
+  &.card-failure {
+    background: color("red", "darken-1");
+  }
+}
+
+.card-status {
+  &.card-default {
+    background: color("blue", "darken-3");
+  }
+  &.card-success {
+    background: color("green", "darken-3");
+  }
+  &.card-in-progress {
+    @extend .progress;
+    height: auto;
+    margin: 0;
+
+    background-color: lighten(color("yellow", "darken-3"), 40%);
+
+    .indeterminate {
+      background-color: color("yellow", "darken-3");
+    }
+  }
+  &.card-failure {
+    background: color("red", "darken-3");
+  }
+}

@@ -1,0 +1,10 @@
+= simple_form_for @<%= singular_table_name %>, html: { class: 'form-horizontal' } do |f|
+  <%- attributes.each do |attribute| -%>
+  = f.<%= attribute.reference? ? :association : :input %> :<%= attribute.name %>
+  <%- end -%>
+
+  = render 'shared/actions/form_actions',
+    f: f,
+    cancel_new_path: <%= plural_table_name %>_path,
+    cancel_edit_path: <%= plural_table_name %>_path,
+    destroy_path: can?(:destroy, @<%= singular_table_name %>) && @<%= singular_table_name %>

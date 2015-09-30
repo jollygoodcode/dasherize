@@ -1,0 +1,96 @@
+[
+  {
+    "url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/18",
+    "labels_url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/18/labels{/name}",
+    "comments_url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/18/comments",
+    "events_url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/18/events",
+    "html_url": "https://github.com/jollygoodcode/twemoji/pull/18",
+    "id": 95581907,
+    "number": 18,
+    "title": "Add support for output json",
+    "user": {
+      "login": "JuanitoFatas",
+      "id": 1000669,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1000669?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/JuanitoFatas",
+      "html_url": "https://github.com/JuanitoFatas",
+      "followers_url": "https://api.github.com/users/JuanitoFatas/followers",
+      "following_url": "https://api.github.com/users/JuanitoFatas/following{/other_user}",
+      "gists_url": "https://api.github.com/users/JuanitoFatas/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/JuanitoFatas/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/JuanitoFatas/subscriptions",
+      "organizations_url": "https://api.github.com/users/JuanitoFatas/orgs",
+      "repos_url": "https://api.github.com/users/JuanitoFatas/repos",
+      "events_url": "https://api.github.com/users/JuanitoFatas/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/JuanitoFatas/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2015-07-17T04:14:28Z",
+    "updated_at": "2015-07-17T09:46:06Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/jollygoodcode/twemoji/pulls/18",
+      "html_url": "https://github.com/jollygoodcode/twemoji/pull/18",
+      "diff_url": "https://github.com/jollygoodcode/twemoji/pull/18.diff",
+      "patch_url": "https://github.com/jollygoodcode/twemoji/pull/18.patch"
+    },
+    "body": "Can output json like GitHub Emojis API: https://api.github.com/emojis\r\n\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/12",
+    "labels_url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/12/labels{/name}",
+    "comments_url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/12/comments",
+    "events_url": "https://api.github.com/repos/jollygoodcode/twemoji/issues/12/events",
+    "html_url": "https://github.com/jollygoodcode/twemoji/pull/12",
+    "id": 62135302,
+    "number": 12,
+    "title": "Promote Ruby 2.0+.",
+    "user": {
+      "login": "JuanitoFatas",
+      "id": 1000669,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1000669?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/JuanitoFatas",
+      "html_url": "https://github.com/JuanitoFatas",
+      "followers_url": "https://api.github.com/users/JuanitoFatas/followers",
+      "following_url": "https://api.github.com/users/JuanitoFatas/following{/other_user}",
+      "gists_url": "https://api.github.com/users/JuanitoFatas/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/JuanitoFatas/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/JuanitoFatas/subscriptions",
+      "organizations_url": "https://api.github.com/users/JuanitoFatas/orgs",
+      "repos_url": "https://api.github.com/users/JuanitoFatas/repos",
+      "events_url": "https://api.github.com/users/JuanitoFatas/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/JuanitoFatas/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2015-03-16T16:33:32Z",
+    "updated_at": "2015-03-16T16:33:32Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/jollygoodcode/twemoji/pulls/12",
+      "html_url": "https://github.com/jollygoodcode/twemoji/pull/12",
+      "diff_url": "https://github.com/jollygoodcode/twemoji/pull/12.diff",
+      "patch_url": "https://github.com/jollygoodcode/twemoji/pull/12.patch"
+    },
+    "body": "- [ ] Changelog\r\n- [ ] Release v1.2.0"
+  }
+]

@@ -1,0 +1,16 @@
+.form-action.form-group
+  .form-left-offset.form-right
+    - if f.object.new_record?
+      => f.button :button, class: 'btn', data: { disable_with: t('helpers.disable_with') } do
+        = icon 'check-square-o', t('helpers.submit.create', model: f.object.class.model_name.human.titleize)
+      = ' or '
+      = link_to t('.cancel', default: t('helpers.links.cancel')), cancel_new_path
+    - else
+      => f.button :button, class: 'btn', data: { disable_with: t('helpers.disable_with') } do
+        = icon 'check-square-o', t('helpers.submit.update', model: f.object.class.model_name.human.titleize)
+      = ' or '
+      = link_to t('.cancel', default: t('helpers.links.cancel')), cancel_edit_path
+      - if destroy_path
+        .pull-right
+          = link_to destroy_path, class: 'btn red', method: :delete, data: { confirm: t('helpers.confirm'), disable_with: t('helpers.disable_with') } do
+            = icon 'trash', t('.destroy', default: t('helpers.links.destroy'))

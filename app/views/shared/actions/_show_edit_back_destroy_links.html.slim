@@ -1,0 +1,10 @@
+.row
+  .col-lg-12.col-md-12.col-sm-12
+    => link_to edit_path, class: 'btn btn-primary' do
+      = icon 'edit', t('helpers.links.edit', model: klass.model_name.human)
+    = ' or '
+    = link_to t('.back', default: t('helpers.links.back')), back_path
+    - if destroy_path
+      .pull-right
+        = link_to destroy_path, class: 'btn btn-danger', method: :delete, data: { confirm: t('helpers.confirm'), disable_with: t('helpers.disable_with') } do
+          = icon 'trash', t('.destroy', default: t('helpers.links.destroy'))

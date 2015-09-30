@@ -1,0 +1,31 @@
+.section.mar-lg-top.mar-lg-bottom
+  .container
+    h1.center
+      strong Dasherize
+    h5.center.thin.grey-text A simple and beautiful material-based dashboard for your projects
+
+    .divider style='margin-top: 80px;'
+
+.section
+  .header.mar-md-bottom
+    h4.center Cards View
+    h6.center.thin.grey-text Great as an overview of all your projects, and goes really well with your morning coffee.
+
+  .row
+    - @projects.each do |project|
+      .col.s12.m4
+        = render 'projects/project', project: project
+
+.section
+  .container
+    .divider
+
+.section
+  .header.mar-md-bottom
+    h4.center Presentation View
+    h6.center.thin.grey-text Essential as a big screen display in the office.
+
+  .row.presentation
+    - @projects.each do |project|
+      .col.s12.m4
+        = render 'projects/project', project: project

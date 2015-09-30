@@ -1,0 +1,14 @@
+h1.page-header Change Your Password
+
+.row
+  .col-sm-6.col-sm-offset-3
+
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, defaults: { wrapper: :vertical_form, label: false }) do |f|
+      = f.full_error :reset_password_token, class: 'alert alert-danger'
+      = f.input :reset_password_token, as: :hidden
+
+      = f.input :password, autofocus: true
+      = f.input :password_confirmation
+
+      .form-action.form-group
+        = f.button :submit, 'Change My Password', class: 'btn btn-primary', data: { disable_with: t('helpers.disable_with') }

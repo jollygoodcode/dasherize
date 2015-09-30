@@ -1,0 +1,12 @@
+h1.page-header Forgot Your Password?
+
+.row
+  .col-sm-6.col-sm-offset-3
+
+    p Please enter your email below and we'll send you an email for resetting your password.
+
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, defaults: { wrapper: :vertical_form, label: false }) do |f|
+      = f.input :email, autofocus: true
+
+      .form-action.form-group
+        = f.button :submit, 'Reset Password', class: 'btn btn-primary', data: { disable_with: t('helpers.disable_with') }

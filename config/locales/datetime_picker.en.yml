@@ -1,0 +1,7 @@
+en:
+  datepicker:
+    dformat: '%d/%m/%Y'
+    pformat: 'DD/MM/YYYY'
+  timepicker:
+    dformat: '%R'
+    pformat: 'HH:mm'

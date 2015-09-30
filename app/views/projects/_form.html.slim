@@ -1,0 +1,16 @@
+= simple_form_for @project do |f|
+  .row
+    = f.input :repo_name, autofocus: true
+  .row
+    = f.input :ci_type, collection: [:travis, :codeship], prompt: "Please select a Provider"
+  .row
+    = f.input :travis_token
+  .row
+    = f.input :codeship_uuid
+
+  .mar-lg-top.mar-lg-bottom
+    = render "shared/actions/form_actions",
+      f: f,
+      cancel_new_path: projects_path,
+      cancel_edit_path: projects_path,
+      destroy_path: can?(:destroy, @project) && @project

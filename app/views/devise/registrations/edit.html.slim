@@ -1,0 +1,19 @@
+.container
+  h2.mar-lg-bottom Edit Profile
+
+  = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    .row
+      = f.input :name , disabled: true
+    .row
+      = f.input :email, disabled: true
+
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      p Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+    /= f.input :password, autocomplete: 'off', hint: %(Leave this blank if you don't want to change your password), required: false
+    /= f.input :password_confirmation, required: false
+    /
+    /= f.input :current_password, hint: 'For security, we need your current password to confirm your changes', required: true
+
+    .mar-lg-top.mar-lg-bottom
+      = f.button :submit, 'Update Profile', class: 'btn btn-primary', disabled: true, data: { disable_with: t('helpers.disable_with') }

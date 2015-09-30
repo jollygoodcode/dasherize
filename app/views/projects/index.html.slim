@@ -1,0 +1,22 @@
+- if @projects.present?
+  .row.mar-lg-top
+    - @projects.each do |project|
+      .col.s12.m4
+        .project id="project:#{project.id}"
+          = link_to project_path(project), project_path(project), remote: true, class: 'hide js-project'
+
+          .card-panel.no-padding.grey.darken-1
+            .card-heading
+              .card-title
+                = link_to project.repo_name
+                .right
+                  = link_to icon("gear"), edit_project_path(project), class: "gear"
+            .card-status.center.progress
+              .indeterminate
+
+- else
+  .container.center
+    p
+      em I am feeling empty.
+    p
+      = link_to icon("plus", "Add a Project now"), new_project_path, class: "btn btn-primary"

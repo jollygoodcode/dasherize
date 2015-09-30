@@ -1,0 +1,64 @@
+en:
+  simple_form:
+    "yes": Yes
+    "no": No
+    required:
+      text: required
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'
+    user_defaults: &user_defaults
+      user:
+        name:  Name
+        email: Email
+        new:
+          password: Password
+          password_confirmation: Password Confirmation
+        edit:
+          password: New Password
+          password_confirmation: New Password Confirmation
+          current_password: Current Password
+
+    labels:
+      <<: *user_defaults
+      user:
+        password_confirmation: Confirm password
+      registration:
+        password_confirmation: Confirm password
+      project:
+        repo_name: Full Repository Name
+        ci_type: CI Provider
+        codeship_token: Travis Token
+        codeship_uuid: Codeship API Key
+
+    placeholders:
+      <<: *user_defaults
+
+    hints:
+      project:
+        repo_name: E.g. rails/rails, jollygoodcode/twemoji
+        travis_token: Retrieve Travis Token from the Profile tab on your Accounts page
+        codeship_uuid: Retrieve Project UUID from https://codeship.com/projects/[PROJECTID]/configure
+

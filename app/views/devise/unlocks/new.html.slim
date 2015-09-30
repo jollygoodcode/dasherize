@@ -1,0 +1,14 @@
+h1.page-header Send Unlock Instructions
+
+.row
+  .col-sm-6.col-sm-offset-3
+
+    p Please enter your email below and we'll send you an email for unlocking your account.
+
+    = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }, defaults: { wrapper: :vertical_form, label: false }) do |f|
+      = f.full_error :unlock_token, class: 'alert alert-danger'
+
+      = f.input :email, autofocus: true
+
+      .form-action.form-group
+        = f.button :submit, 'Send Unlock Instructions', class: 'btn btn-primary', data: { disable_with: t('helpers.disable_with') }

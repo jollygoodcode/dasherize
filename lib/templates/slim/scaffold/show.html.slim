@@ -1,0 +1,16 @@
+.page-header
+  h1= page_title(model: <%= class_name %>.model_name.human, default: crumbs.last.first)
+
+.row
+  .col-lg-12.col-md-12.col-sm-12
+    .panel.panel-default
+      table.table.table-striped
+        tbody
+          - @<%= singular_table_name %>.attributes.each_pair do |attr, value|
+            = render_attr_value attr, value
+
+= render 'shared/actions/show_edit_back_destroy_links',
+    klass: <%= class_name %>,
+    edit_path: edit_<%= singular_table_name %>_path(@<%= singular_table_name %>),
+    back_path: <%= plural_table_name %>_path,
+    destroy_path: can?(:destroy, @<%= singular_table_name %>) && @<%= singular_table_name %>

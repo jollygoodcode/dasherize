@@ -1,0 +1,15 @@
+h1.page-header Sign Up
+
+.row
+  .col-sm-4.col-sm-offset-4
+
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: { wrapper: :vertical_form, label: false }) do |f|
+      = f.input :name, autofocus: true
+      = f.input :email
+      = f.input :password, placeholder: 'Password (Minimum 8 characters)'
+      = f.input :password_confirmation
+
+      .form-action.form-group
+        = f.button :submit, 'Sign Up', class: 'btn btn-block btn-primary', data: { disable_with: t('helpers.disable_with') }
+        p.pad-sm-top.text-center
+          | Have an Account? #{link_to 'Sign In', new_user_session_path}

@@ -1,0 +1,59 @@
+// vars for padding and margin
+$sizes  : ((sm, 10px), (md, 20px), (lg, 40px));
+$corners: (top, right, bottom, left);
+
+// margin
+// .mar-sm-top    { margin-top: 10px }
+// .mar-md-top    { margin-top: 20px }
+// .mar-lg-top    { margin-top: 40px }
+// .mar-sm-right  { margin-right: 10px }
+// .mar-md-right  { margin-right: 20px }
+// .mar-lg-right  { margin-right: 40px }
+// .mar-sm-bottom { margin-bottom: 10px }
+// .mar-md-bottom { margin-bottom: 20px }
+// .mar-lg-bottom { margin-bottom: 40px }
+// .mar-sm-left   { margin-left: 10px }
+// .mar-md-left   { margin-left: 20px }
+// .mar-lg-left   { margin-left: 40px }
+@each $size in $sizes {
+  @each $corner in $corners {
+    .mar-#{nth($size, 1)}-#{$corner} {
+      margin-#{$corner}: #{nth($size, 2)};
+    }
+  }
+}
+
+// padding
+// .pad-sm-top    { padding-top: 10px }
+// .pad-md-top    { padding-top: 20px }
+// .pad-lg-top    { padding-top: 40px }
+// .pad-sm-right  { padding-right: 10px }
+// .pad-md-right  { padding-right: 20px }
+// .pad-lg-right  { padding-right: 40px }
+// .pad-sm-bottom { padding-bottom: 10px }
+// .pad-md-bottom { padding-bottom: 20px }
+// .pad-lg-bottom { padding-bottom: 40px }
+// .pad-sm-left   { padding-left: 10px }
+// .pad-md-left   { padding-left: 20px }
+// .pad-lg-left   { padding-left: 40px }
+@each $size in $sizes {
+  @each $corner in $corners {
+    .pad-#{nth($size, 1)}-#{$corner} {
+      padding-#{$corner}: #{nth($size, 2)};
+    }
+  }
+}
+
+.none {
+  display: none;
+}
+
+/* Overrides */
+.table {
+  margin-bottom: 0;
+
+  tbody tr:first-child td {
+    border: none;
+  }
+}
+

@@ -1,0 +1,60 @@
+.project id="project:#{project.id}"
+  .card-panel.no-padding
+    .card-heading class=status_class(project.status)
+      .card-title.clearfix
+        .left
+          .name
+            = link_to project.name, project.url
+          .org_user
+            em> in
+            = project.org_user
+
+        - if project.persisted?
+          .right
+            = link_to icon("gear"), edit_project_path(project), class: 'gear'
+      .card-overview.center
+        .col.s6.no-padding
+          .number= link_to project.pull_requests.count, project.pull_requests_url
+          .number-title Pull Requests
+        .col.s6.no-padding
+          .number= link_to project.issues.count, project.issues_url
+          .number-title Issues
+    .card-status.center class=status_class(project.status)
+      .indeterminate
+      = status_text(project.status)
+
+    .card-content
+      h6 Pull Requests
+      - recent = project.pull_requests[0...3]
+      - if recent.present?
+        ul.collection
+          - recent.each do |pr|
+            li.collection-item.avatar
+              = image_tag pr.user.avatar_url, class: "circle"
+              span.title.truncate
+                = link_to pr.title, pr.html_url, title: pr.title, target: "_blank"
+              p
+                = local_time_ago(pr.created_at)
+      - else
+        ul.collection
+          li
+            p No Pull Requests! Yea!
+
+    .divider
+
+    .card-content
+      h6 Issues
+      - recent = project.issues[0...3]
+      - if recent.present?
+        ul.collection
+          - recent.each do |is|
+            li.collection-item.avatar
+              = image_tag is.user.avatar_url, class: "circle"
+              span.title.truncate
+                = link_to is.title, is.html_url, title: is.title, target: "_blank"
+              p
+                = local_time_ago(is.created_at)
+      - else
+        ul.collection
+          li
+            p No Issues! Yea!
