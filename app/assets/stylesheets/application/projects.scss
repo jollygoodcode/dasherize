@@ -109,6 +109,8 @@
 }
 
 .card-status {
+  height: 25px;
+
   &.card-default {
     background: color("blue", "darken-3");
   }
