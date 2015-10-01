@@ -33,7 +33,7 @@ html(lang="en")
         }
       });
 
-  body class=(page_class + " presentation" if params[:mode] == "presentation")
+  body class=(page_class + (params[:mode] == "presentation" ? " presentation" : "" ))
     nav
       .container
         .nav-wrapper

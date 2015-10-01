@@ -1,10 +1,19 @@
 .section.mar-lg-top.mar-lg-bottom
   .container
-    h1.center
-      strong Dasherize
-    h5.center.thin.grey-text A simple and beautiful material-based dashboard for your projects
+    .center
+      h1
+        strong Dasherize
+      h5.thin.grey-text A simple and beautiful material-based dashboard for your projects
 
-    .divider style='margin-top: 80px;'
+    .row.call-to-actions
+      .col.s12.m6.btn-try
+        = link_to "/users/auth/github", class: "btn btn-large waves-effect waves-light" do
+          = icon("television", "Try Dasherize", class: "left")
+      .col.s12.m6.btn-code
+        = link_to "https://www.github.com/jollygoodcode/dasherize", class: "btn btn-large waves-effect waves-light" do
+          = icon("code", "Source Code", class: "left")
+
+    .divider
 
 .section
   .header.mar-md-bottom

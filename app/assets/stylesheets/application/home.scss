@@ -1,0 +1,33 @@
+.home.index {
+  .call-to-actions {
+    margin: 40px 0 60px 0;
+  }
+
+  .btn-try a {
+    background-color: color("amber", "darken-2")
+  }
+
+  .btn-code a {
+    background-color: color("amber", "darken-2")
+  }
+
+  @media #{$small-and-down} {
+    .btn-try,
+    .btn-code {
+      text-align: center;
+    }
+
+    .btn-try {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media #{$medium-and-up} {
+    .btn-try {
+      text-align: right;
+    }
+    .btn-code {
+      text-align: left;
+    }
+  }
+}
