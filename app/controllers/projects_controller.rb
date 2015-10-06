@@ -42,6 +42,6 @@ class ProjectsController < ApplicationController
   private
 
     def model_params
-      params.require(:project).permit(:repo_name, :ci_type, :travis_token, :codeship_uuid)
+      params.require(:project).permit(:repo_name, :ci_type, :travis_token, :codeship_uuid, :circleci_token)
     end
 end

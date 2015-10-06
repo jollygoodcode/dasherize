@@ -2,11 +2,13 @@
   .row
     = f.input :repo_name, autofocus: true
   .row
-    = f.input :ci_type, collection: [:travis, :codeship], prompt: "Please select a Provider"
+    = f.input :ci_type, collection: [:travis, :codeship, :circleci], prompt: "Please select a Provider"
   .row
     = f.input :travis_token
   .row
     = f.input :codeship_uuid
+  .row
+    = f.input :circleci_token
 
   .mar-lg-top.mar-lg-bottom
     = render "shared/actions/form_actions",
