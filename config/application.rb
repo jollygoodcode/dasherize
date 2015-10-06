@@ -45,7 +45,7 @@ module Dasherize
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
         origins ENV['WWW_HOSTNAME']
-        resource '/assets/*', :headers => :any, :methods => [:head, :get, :options]
+        resource '/assets/*', headers: :any, methods: [:head, :get, :options]
       end
     end
 
