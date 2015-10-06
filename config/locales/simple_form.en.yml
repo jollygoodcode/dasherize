@@ -50,7 +50,7 @@ en:
       project:
         repo_name: Full Repository Name
         ci_type: CI Provider
-        codeship_token: Travis Token
+        travis_token: Travis Token
         codeship_uuid: Codeship API Key
 
     placeholders:
