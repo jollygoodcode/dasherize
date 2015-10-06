@@ -72,10 +72,6 @@ RUBY_GC_HEAP_OLDOBJECT_LIMIT_FACTOR=0.9
 - Health of PivotalTracker Project
 - Bugs Count (when not using [RuntimeError.net](http://runtimeerror.net/))
 
-## License
-
-Please see the [LICENSE.md](/LICENSE.md) file.
-
 ## Contributing
 
 Please see the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
@@ -83,6 +79,14 @@ Please see the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
 ## Deployment
 
 Please see the [DEPLOYMENT.md](/CONTRIBUTING.md) file.
+
+## Credits
+
+A huge THANK YOU to all our [contributors](https://github.com/jollygoodcode/dasherize/graphs/contributors)! :heart:
+
+## License
+
+Please see the [LICENSE.md](/LICENSE.md) file.
 
 ## Maintained by Jolly Good Code
 
