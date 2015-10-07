@@ -4,7 +4,7 @@
 
 Dasherize is a beautiful material-based dashboard for your projects which provides you with an overview of open Pull Requests and Issues, and statuses of your CI, all on a single web page.
 
-Currently supports GitHub, Travis and CodeShip.
+Currently supports GitHub, Travis, CodeShip and CircleCI.
 
 Take it for a spin on [http://dasherize.com](http://dasherize.com).
 
