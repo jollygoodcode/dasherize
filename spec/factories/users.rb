@@ -7,12 +7,6 @@ FactoryGirl.define do
 
     confirmed_at { Time.current }
 
-    trait :with_admin do
-      after(:create) do |user|
-        user.add_role(:admin)
-      end
-    end
-
     trait :with_oauth_account do
       oauth_account
     end

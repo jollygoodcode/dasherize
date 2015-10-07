@@ -14,10 +14,5 @@ class Ability
     if user.persisted?
       can :crud, Project, user_id: user.id
     end
-
-    # Admin
-    if user.try(:has_role?, :admin)
-      can :manage, :all
-    end
   end
 end
