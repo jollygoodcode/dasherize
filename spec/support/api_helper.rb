@@ -30,7 +30,7 @@ module APIHelper
     stub_request(
       :get, "https://api.travis-ci.org/repos/sinatra/sinatra.json?branch=master"
     ).with(
-      headers: { "User-Agent" => "http.rb/0.9.8" }
+      headers: { "User-Agent" => "Dasherize/1.0.0", "Accept" => "application/vnd.travis-ci.2+json" }
     ).to_return(
       status: 200, body: IO.read("spec/fixtures/travis/sinatra.json"),
       headers: { "Content-Type" => "application/json" }
@@ -39,7 +39,7 @@ module APIHelper
     stub_request(
       :get, "https://api.travis-ci.org/repos/jollygoodcode/twemoji.json?branch=master"
     ).with(
-      headers: { "User-Agent" => "http.rb/0.9.8" }
+      headers: { "User-Agent" => "Dasherize/1.0.0", "Accept"=>"application/vnd.travis-ci.2+json" }
     ).to_return(
       status: 200, body: IO.read("spec/fixtures/travis/twemoji.json"),
       headers: { "Content-Type" => "application/json" }
@@ -48,7 +48,7 @@ module APIHelper
     stub_request(
       :get, "https://api.travis-ci.org/repos/winston/google_visualr.json?branch=master"
     ).with(
-      headers: { "User-Agent" => "http.rb/0.9.8" }
+      headers: { "User-Agent" => "Dasherize/1.0.0", "Accept" => "application/vnd.travis-ci.2+json" }
     ).to_return(
       status: 200, body: IO.read("spec/fixtures/travis/google_visualr.json"),
       headers: { "Content-Type" => "application/json" }

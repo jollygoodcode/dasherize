@@ -19,6 +19,10 @@ class Status::Travis < Status::Base
     end
 
     def api_result
-      JSON.parse(HTTP.get(api_endpoint))["last_build_status"]
+      JSON.parse(HTTP.headers(headers).get(api_endpoint))["last_build_status"]
+    end
+
+    def headers
+      { "User-Agent" => "Dasherize/1.0.0", accept: "application/vnd.travis-ci.2+json" }
     end
 end

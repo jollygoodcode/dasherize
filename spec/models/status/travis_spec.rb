@@ -3,7 +3,7 @@ RSpec.describe Status::Travis do
     let(:travis) { Status::Travis.new("jollygoodcode/dasherize") }
 
     before do
-      allow(HTTP).to receive(:get)
+      allow(HTTP).to receive(:headers) { spy }
       allow(JSON).to receive(:parse) { Hash("last_build_status" => api_result) }
     end
 
