@@ -9,8 +9,6 @@ class OauthAccount < ActiveRecord::Base
       account.email            = auth.info.email
       account.image_url        = auth.info.image
       account.oauth_token      = auth.credentials.token
-      account.oauth_secret     = auth.credentials.secret
-      account.oauth_expires_at = Time.at(auth.credentials.expires_at) if auth.credentials.expires_at
 
       (account.user || account.build_user).tap do |user|
         user.attributes = {
@@ -27,4 +25,22 @@ class OauthAccount < ActiveRecord::Base
     logger.error auth.inspect
     raise
   end
+
+  def oauth_token=(token)
+    self[:oauth_token] = self.class.crypt.encrypt_and_sign(token)
+  end
+
+  def oauth_token
+    encrypted_token = self[:oauth_token]
+
+    if encrypted_token.present?
+      self.class.crypt.decrypt_and_verify(encrypted_token)
+    end
+  end
+
+  private
+
+    def self.crypt
+      ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
+    end
 end
