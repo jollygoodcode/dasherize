@@ -1,9 +1,9 @@
 class Status::Travis < Status::Base
   def status
     case api_result
-      when 0
+      when "passed"
         :passed
-      when 1
+      when "failed"
         :failed
       else
         :waiting
@@ -12,14 +12,16 @@ class Status::Travis < Status::Base
 
   private
 
-    def api_endpoint
-      url  = "https://api.travis-ci.org/repos/#{repo_name}.json?branch=#{branch}"
-      url += "&token=#{auth_token}" if auth_token.present?
-      url
+    def api_result
+      JSON.parse(HTTP.headers(headers).get(api_endpoint))["branch"]["state"]
     end
 
-    def api_result
-      JSON.parse(HTTP.headers(headers).get(api_endpoint))["last_build_status"]
+    def api_endpoint
+      if auth_token.present?
+        "https://api.travis-ci.org/repos/#{repo_name}/branches/#{branch}.json&token=#{auth_token}"
+      else
+        "https://api.travis-ci.org/repos/#{repo_name}/branches/#{branch}.json"
+      end
     end
 
     def headers

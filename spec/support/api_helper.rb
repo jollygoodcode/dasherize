@@ -28,7 +28,7 @@ module APIHelper
     )
 
     stub_request(
-      :get, "https://api.travis-ci.org/repos/sinatra/sinatra.json?branch=master"
+      :get, "https://api.travis-ci.org/repos/sinatra/sinatra/branches/master.json"
     ).with(
       headers: { "User-Agent" => "Dasherize/1.0.0", "Accept" => "application/vnd.travis-ci.2+json" }
     ).to_return(
@@ -37,7 +37,7 @@ module APIHelper
     )
 
     stub_request(
-      :get, "https://api.travis-ci.org/repos/jollygoodcode/twemoji.json?branch=master"
+      :get, "https://api.travis-ci.org/repos/jollygoodcode/twemoji/branches/master.json"
     ).with(
       headers: { "User-Agent" => "Dasherize/1.0.0", "Accept"=>"application/vnd.travis-ci.2+json" }
     ).to_return(
@@ -46,7 +46,7 @@ module APIHelper
     )
 
     stub_request(
-      :get, "https://api.travis-ci.org/repos/winston/google_visualr.json?branch=master"
+      :get, "https://api.travis-ci.org/repos/winston/google_visualr/branches/master.json"
     ).with(
       headers: { "User-Agent" => "Dasherize/1.0.0", "Accept" => "application/vnd.travis-ci.2+json" }
     ).to_return(
