@@ -52,6 +52,7 @@ en:
         ci_type: CI Provider
         codeship_token: Travis Token
         codeship_uuid: Codeship API Key
+        circleci_token: CircleCI API Token
 
     placeholders:
       <<: *user_defaults
@@ -61,4 +62,5 @@ en:
         repo_name: E.g. rails/rails, jollygoodcode/twemoji
         travis_token: Retrieve Travis Token from the Profile tab on your Accounts page
         codeship_uuid: Retrieve Project UUID from https://codeship.com/projects/[PROJECTID]/configure
+        circleci_token: "Add a CircleCI Token from your account dashboard. https://circleci.com/docs/api#authentication"
 

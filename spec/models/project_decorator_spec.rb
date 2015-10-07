@@ -110,8 +110,20 @@ RSpec.describe ProjectDecorator do
       end
     end
 
-    context "other CIs" do
+    context "Circle CI" do
       let(:ci_type) { "circleci" }
+
+      it "returns API result from Status::Circleci" do
+        expect(Status::Circleci).to receive(:new) { double(status: :passed) }
+
+        subject.process_with
+
+        expect(subject.status).to eq :passed
+      end
+    end
+
+    context "other CIs" do
+      let(:ci_type) { "sideci" }
 
       it "returns :unavailable for other CIs" do
         subject.process_with

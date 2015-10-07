@@ -62,6 +62,8 @@ class ProjectDecorator < SimpleDelegator
             Status::Travis.new(repo_name, travis_token).status
           when "codeship"
             Status::Codeship.new(repo_name, codeship_uuid).status
+          when "circleci"
+            Status::Circleci.new(repo_name, circleci_token).status
           else
             :unavailable
         end
