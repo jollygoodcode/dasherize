@@ -37,9 +37,6 @@ module Dasherize
     # Sending Mail
     config.action_mailer.default_url_options = { host: ENV['WWW_HOSTNAME'] }
 
-    # Additional Assets
-    # config.assets.precompile += %w( admin.css admin.js )
-
     # https://github.com/cyu/rack-cors
     # Note that this might still not work as static files are usually served from the web server
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
