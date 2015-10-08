@@ -119,7 +119,7 @@
   }
   &.card-in-progress {
     @extend .progress;
-    height: auto;
+    height: 25px;
     margin: 0;
 
     background-color: lighten(color("yellow", "darken-3"), 40%);
