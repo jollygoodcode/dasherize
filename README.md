@@ -25,7 +25,7 @@ Please feel free to:
 
 ## Deploy on Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jollygoodcode/dasherize/tree/master)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 Once deployed on Heroku, you'll have to set up some ENV variables.
 
