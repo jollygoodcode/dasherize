@@ -1,6 +1,6 @@
 RSpec.describe Status::Travis do
   describe "#status" do
-    let(:travis) { Status::Travis.new("jollygoodcode/dasherize") }
+    let(:travis) { Status::Travis.new("jollygoodcode/dasherize").run! }
 
     before do
       allow(HTTP).to receive(:headers) { spy }
@@ -36,7 +36,7 @@ RSpec.describe Status::Travis do
     let(:repo)      { "jollygoodcode/dasherize" }
     let(:build_id)  { "1234567890" }
 
-    let(:travis)    { Status::Travis.new(repo) }
+    let(:travis)    { Status::Travis.new(repo).run! }
 
     before do
       allow(HTTP).to receive(:headers) { spy }

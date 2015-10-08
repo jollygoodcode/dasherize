@@ -21,6 +21,6 @@ class Status::Codeship < Status::Base
     end
 
     def build_state
-      api_result.status
+      response.status
     end
 end

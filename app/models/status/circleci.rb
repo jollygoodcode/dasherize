@@ -23,11 +23,11 @@ class Status::Circleci < Status::Base
     end
 
     def build_state
-      api_result["status"]
+      response["status"]
     end
 
     def build_url
-      api_result["build_url"]
+      response["build_url"]
     end
 
     def api_endpoint

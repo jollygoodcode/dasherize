@@ -1,6 +1,6 @@
 RSpec.describe Status::Circleci do
   describe "#status" do
-    let(:circleci) { Status::Circleci.new("mtchavez/circleci") }
+    let(:circleci) { Status::Circleci.new("mtchavez/circleci").run! }
 
     let(:failure_messages) do
       %w(retried canceled infrastructure_fail timedout failed no_tests)
@@ -41,7 +41,7 @@ RSpec.describe Status::Circleci do
   end
 
   describe "#url" do
-    let(:circleci) { Status::Circleci.new("mtchavez/circleci") }
+    let(:circleci) { Status::Circleci.new("mtchavez/circleci").run! }
 
     before do
       allow(HTTP).to receive(:headers) { spy }

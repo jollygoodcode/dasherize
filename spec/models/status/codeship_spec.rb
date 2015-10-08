@@ -1,6 +1,6 @@
 RSpec.describe Status::Codeship do
   describe "#status" do
-    let(:codeship) { Status::Codeship.new("jollygoodcode/dasherize") }
+    let(:codeship) { Status::Codeship.new("jollygoodcode/dasherize").run! }
 
     let(:failure_messages) do
       %i(error projectnotfound branchnotfound ignored stopped infrastructure_failure)
@@ -38,7 +38,7 @@ RSpec.describe Status::Codeship do
   # which means storing another field in the database -> not something we want..
   # Hence best effort for now is at least to link to Codeship
   describe "#url" do
-    let(:codeship) { Status::Codeship.new("jollygoodcode/dasherize") }
+    let(:codeship) { Status::Codeship.new("jollygoodcode/dasherize").run! }
 
     it { expect(codeship.url).to eq "https://codeship.com/projects" }
   end
