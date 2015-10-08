@@ -23,11 +23,11 @@ class Status::Travis < Status::Base
     end
 
     def build_state
-      api_result["branch"]["state"]
+      response["branch"]["state"]
     end
 
     def build_id
-      api_result["branch"]["id"]
+      response["branch"]["id"]
     end
 
     def api_endpoint

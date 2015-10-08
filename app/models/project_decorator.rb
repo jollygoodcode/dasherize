@@ -63,11 +63,11 @@ class ProjectDecorator < SimpleDelegator
       @_ci =
         case ci_type
           when "travis"
-            Status::Travis.new(repo_name, travis_token)
+            Status::Travis.new(repo_name, travis_token).run!
           when "codeship"
-            Status::Codeship.new(repo_name, codeship_uuid)
+            Status::Codeship.new(repo_name, codeship_uuid).run!
           when "circleci"
-            Status::Circleci.new(repo_name, circleci_token)
+            Status::Circleci.new(repo_name, circleci_token).run!
           else
             Status::Null.new
         end

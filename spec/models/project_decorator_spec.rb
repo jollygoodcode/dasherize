@@ -90,7 +90,7 @@ RSpec.describe ProjectDecorator do
       let(:ci_type) { "travis" }
 
       it "returns API result from Status::Travis" do
-        expect(Status::Travis).to receive(:new) { double(status: :passed) }
+        expect(Status::Travis).to receive_message_chain(:new, :run!) { double(status: :passed) }
 
         subject.process_with
 
@@ -102,7 +102,7 @@ RSpec.describe ProjectDecorator do
       let(:ci_type) { "codeship" }
 
       it "returns API result from Status::Codeship" do
-        expect(Status::Codeship).to receive(:new) { double(status: :passed) }
+        expect(Status::Codeship).to receive_message_chain(:new, :run!) { double(status: :passed) }
 
         subject.process_with
 
@@ -114,7 +114,7 @@ RSpec.describe ProjectDecorator do
       let(:ci_type) { "circleci" }
 
       it "returns API result from Status::Circleci" do
-        expect(Status::Circleci).to receive(:new) { double(status: :passed) }
+        expect(Status::Circleci).to receive_message_chain(:new, :run!) { double(status: :passed) }
 
         subject.process_with
 
