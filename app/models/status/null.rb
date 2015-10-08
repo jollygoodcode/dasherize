@@ -1,6 +1,6 @@
 class Status::Null
   def status
-    :failed
+    :unavailable
   end
 
   def url
