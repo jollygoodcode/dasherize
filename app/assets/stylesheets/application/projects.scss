@@ -56,6 +56,15 @@
 
     font-size: 0.65rem;
     font-style: italic;
+
+    a,
+    a:visited {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .card-content {
