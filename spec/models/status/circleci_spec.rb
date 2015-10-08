@@ -1,14 +1,14 @@
 RSpec.describe Status::Circleci do
-  let(:failure_messages) do
-    %w(retried canceled infrastructure_fail timedout failed no_tests)
-  end
-
-  let(:waiting_messages) do
-    %w(not_run running queued scheduled not_running)
-  end
-
   describe "#status" do
     let(:circleci) { Status::Circleci.new("mtchavez/circleci") }
+
+    let(:failure_messages) do
+      %w(retried canceled infrastructure_fail timedout failed no_tests)
+    end
+
+    let(:waiting_messages) do
+      %w(not_run running queued scheduled not_running)
+    end
 
     before do
       allow(HTTP).to receive(:headers) { spy }
@@ -38,5 +38,16 @@ RSpec.describe Status::Circleci do
         expect(circleci.status).to eq :waiting
       end
     end
+  end
+
+  describe "#url" do
+    let(:circleci) { Status::Circleci.new("mtchavez/circleci") }
+
+    before do
+      allow(HTTP).to receive(:headers) { spy }
+      allow(JSON).to receive(:parse) { [{ "branch" => "master", "build_url" => "https://circleci.com" }] }
+    end
+
+    it { expect(circleci.url).to eq "https://circleci.com" }
   end
 end
