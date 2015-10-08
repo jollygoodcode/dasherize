@@ -21,7 +21,7 @@
           .number-title Issues
     .card-status.center class=status_class(project.status)
       .indeterminate
-      = status_text(project.status)
+      = link_to status_text(project.status), project.status_url, target: "_blank"
 
     .card-content
       h6 Pull Requests

@@ -34,7 +34,11 @@ class ProjectDecorator < SimpleDelegator
   end
 
   def status
-    @_status
+    @_ci.status
+  end
+
+  def status_url
+    @_ci.url
   end
 
   private
@@ -56,16 +60,16 @@ class ProjectDecorator < SimpleDelegator
     end
 
     def init_ci
-      @_status =
+      @_ci =
         case ci_type
           when "travis"
-            Status::Travis.new(repo_name, travis_token).status
+            Status::Travis.new(repo_name, travis_token)
           when "codeship"
-            Status::Codeship.new(repo_name, codeship_uuid).status
+            Status::Codeship.new(repo_name, codeship_uuid)
           when "circleci"
-            Status::Circleci.new(repo_name, circleci_token).status
+            Status::Circleci.new(repo_name, circleci_token)
           else
-            :unavailable
+            Status::Null.new
         end
     end
 end
