@@ -6,7 +6,7 @@ Dasherize is a beautiful material-based dashboard for your projects which provid
 
 Currently supports GitHub, Travis, CodeShip and CircleCI.
 
-Take it for a spin on [http://dasherize.com](http://dasherize.com).
+Take it for a spin on [http://dasherize.com](http://dasherize.com). See [our blog](https://github.com/jollygoodcode/jollygoodcode.github.io/issues/5) for some technical details.
 
 ![screen shot 2015-09-30 at 11 12 13 pm](https://cloud.githubusercontent.com/assets/2112/10197301/712d75ce-67c9-11e5-8dca-563266c1a6ad.png)
 
