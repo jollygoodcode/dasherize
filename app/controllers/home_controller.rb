@@ -5,15 +5,11 @@ class HomeController < ApplicationController
   def index
     @projects =
       Rails.cache.fetch("home-index", expires_in: 24.hours) do
-        _projects =
-          [
-            Project.new(repo_name: "sinatra/sinatra", ci_type: :travis),
-            Project.new(repo_name: "jollygoodcode/twemoji", ci_type: :travis),
-            Project.new(repo_name: "winston/google_visualr", ci_type: :travis)
-          ]
-        _projects.map! { |project| ProjectDecorator.new(project) }
-        _projects.each(&:process_with)
-        _projects
+        [
+          Project.new(repo_name: "sinatra/sinatra", ci_type: :travis),
+          Project.new(repo_name: "jollygoodcode/twemoji", ci_type: :travis),
+          Project.new(repo_name: "winston/google_visualr", ci_type: :travis)
+        ].map! { |project| ProjectDecorator.new(project) }.each(&:process_with)
       end
   end
 
