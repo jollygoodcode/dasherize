@@ -1,8 +1,6 @@
 require "feature_helper"
 
 RSpec.feature "Presentation" do
-  background { Rails.cache.clear }
-
   scenario "works" do
     stub_ci_requests_for_home_page
     user = create(:user, :with_oauth_account)
