@@ -6,11 +6,14 @@ class OauthAccount < ActiveRecord::Base
       account.provider         = auth.provider
       account.uid              = auth.uid
       account.name             = auth.info.name
+      account.email            = auth.info.email
+      account.image_url        = auth.info.image
       account.oauth_token      = auth.credentials.token
 
       (account.user || account.build_user).tap do |user|
         user.attributes = {
-          name: account.name || auth.info.nickname || auth.extra.raw_info.username
+          name: account.name,
+          email: account.email || auth.info.nickname || auth.extra.raw_info.username
         }
         user.confirm
         user.save(validate: false)

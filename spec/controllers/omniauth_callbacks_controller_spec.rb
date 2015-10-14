@@ -27,6 +27,7 @@ RSpec.describe OmniauthCallbacksController do
         double(
           :user,
           name: "Audrey",
+          email: "audrey@example.com",
           oauth_account: double(oauth_token: "token")
         )
       end
@@ -37,7 +38,7 @@ RSpec.describe OmniauthCallbacksController do
         do_request
 
         expect(User.count).to eq 1
-        expect(User.last).to have_attributes(name: "Audrey")
+        expect(User.last).to have_attributes(name: "Audrey", email: "audrey@example.com")
       end
     end
   end
