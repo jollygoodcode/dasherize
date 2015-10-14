@@ -10,7 +10,8 @@ class OauthAccount < ActiveRecord::Base
 
       (account.user || account.build_user).tap do |user|
         user.attributes = {
-          name: account.name || auth.info.nickname || auth.extra.raw_info.username
+          name: auth.info.name || auth.info.nickname || auth.extra.raw_info.name,
+          email: auth.info.email || auth.extra.email
         }
         user.confirm
         user.save(validate: false)
