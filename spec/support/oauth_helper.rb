@@ -16,7 +16,7 @@ module OAuthHelper
   def stub_oauth(user)
     OmniAuth.config.add_mock(
       :github,
-      info: { name: user.name },
+      info: { name: user.name, email: user.email },
       credentials: { token: user.oauth_account.oauth_token }
     )
   end

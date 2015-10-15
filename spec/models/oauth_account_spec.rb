@@ -19,6 +19,7 @@ RSpec.describe OauthAccount do
 
       expect(user).to be_kind_of(User)
       expect(user).to be_persisted
+      expect(user.email).to be_present
     end
 
     it "should retrieve existing OauthAccount and User" do
