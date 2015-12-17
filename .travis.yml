@@ -1,6 +1,6 @@
 language: ruby
 sudo: false
-rvm:
+rbenv:
   - 2.2.4
 cache:
   bundler: true
