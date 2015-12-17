@@ -1,11 +1,7 @@
 language: ruby
 sudo: false
-rbenv:
+rvm:
   - 2.2.4
-cache:
-  bundler: true
-  bundler_args: --jobs=3 --retry=3 --without development
-before_install: gem install bundler -v 1.11.2
 before_script:
   - psql -c 'create database dasherize_test;' -U postgres
   - bin/setup
