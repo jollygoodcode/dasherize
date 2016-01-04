@@ -4,5 +4,6 @@ begin
 rescue LoadError => e
   raise unless e.message.include?('spring')
 end
+require 'rubygems'
 require 'bundler/setup'
 load Gem.bin_path('rspec-core', 'rspec')
