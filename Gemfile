@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "2.2.3"
+ruby "2.3.0"
 
 gem "rails", "4.2.4"
 
@@ -71,7 +71,6 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "launchy"
   gem "email_spec"
-  gem "did_you_mean"
 end
 
 group :development do
@@ -92,7 +91,7 @@ end
 
 group :test do
   gem "database_rewinder"
-  gem "webmock"
+  gem "webmock", git: "https://github.com/bblimke/webmock.git"
   gem "vcr"
 end
 
