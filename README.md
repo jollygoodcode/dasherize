@@ -1,6 +1,7 @@
 # Dasherize
 
 [![Build Status](https://travis-ci.org/jollygoodcode/dasherize.svg?branch=master)](https://travis-ci.org/jollygoodcode/dasherize)
+[![Code Climate](https://codeclimate.com/github/jollygoodcode/dasherize/badges/gpa.svg)](https://codeclimate.com/github/jollygoodcode/dasherize)
 
 Dasherize is a beautiful material-based dashboard for your projects which provides you with an overview of open Pull Requests and Issues, and statuses of your CI, all on a single web page.
 
