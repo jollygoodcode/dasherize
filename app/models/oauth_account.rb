@@ -25,20 +25,20 @@ class OauthAccount < ActiveRecord::Base
   end
 
   def oauth_token=(token)
-    self[:oauth_token] = self.class.crypt.encrypt_and_sign(token)
+    self[:oauth_token] = cryptor.encrypt_and_sign(token)
   end
 
   def oauth_token
     encrypted_token = self[:oauth_token]
 
     if encrypted_token.present?
-      self.class.crypt.decrypt_and_verify(encrypted_token)
+      cryptor.decrypt_and_verify(encrypted_token)
     end
   end
 
   private
 
-    def self.crypt
+    def cryptor
       ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
     end
 end
