@@ -80,7 +80,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    crack (0.4.2)
+    crack (0.4.3)
       safe_yaml (~> 1.0.0)
     dalli (2.7.4)
     database_rewinder (0.5.3)
@@ -392,8 +392,8 @@ GEM
     vcr (3.0.0)
     warden (1.2.3)
       rack (>= 1.0)
-    webmock (1.22.3)
-      addressable (>= 2.3.6)
+    webmock (1.22.5)
+      addressable (< 2.4.0)
       crack (>= 0.3.2)
       hashdiff
     websocket (1.2.2)
@@ -468,4 +468,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
