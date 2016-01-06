@@ -36,9 +36,8 @@ class OauthAccount < ActiveRecord::Base
     end
   end
 
-  private
-
-    def self.crypt
-      ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
-    end
+  def self.crypt
+    ActiveSupport::MessageEncryptor.new(Rails.application.secrets.secret_key_base)
+  end
+  private_class_method :crypt  
 end
