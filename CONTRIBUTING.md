@@ -20,14 +20,7 @@ After cloning this repository, run the setup script:
 
 `bin/setup`
 
-Required `ENV` variables:
-
-| ENV                    | purpose                                                      |
-| -----------------------| ------------------------------------------------------------ |
-| `WWW_HOSTNAME`         | e.g. http://localhost:3000                                   |
-| `ASSETS_HOST`          | e.g. localhost:3000                                          |
-| `GITHUB_CLIENT_ID`     |                                                              |
-| `GITHUB_CLIENT_SECRET` |                                                              |
+Prepare your `ENV` variables accordingly with `.env.sample`.
 
 ## Testing
 
