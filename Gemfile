@@ -30,7 +30,7 @@ gem "redis", require: ["redis", "redis/connection/hiredis"]
 gem "hiredis"
 
 # App Specific
-gem "devise"
+gem "devise", ">= 3.5.4"
 gem "rolify"
 gem "cancancan"
 
