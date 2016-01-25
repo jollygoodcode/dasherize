@@ -90,5 +90,6 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 
   # Factory Girl
+  require 'factory_girl_rails'
   config.include FactoryGirl::Syntax::Methods
 end

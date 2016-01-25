@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-ruby "2.2.3"
+ruby "2.3.0"
 
-gem "rails", "4.2.4"
+gem "rails", "4.2.5"
 
 # Server and Database
 gem "puma"
@@ -71,12 +71,11 @@ group :development, :test do
   gem "selenium-webdriver"
   gem "launchy"
   gem "email_spec"
-  gem "did_you_mean"
 end
 
 group :development do
-  gem "spring"
-  gem "spring-commands-rspec"
+  # gem "spring"
+  # gem "spring-commands-rspec"
   gem "quiet_assets"
   gem "better_errors"
   gem "binding_of_caller"
@@ -93,7 +92,6 @@ end
 group :test do
   gem "database_rewinder"
   gem "webmock"
-  gem "vcr"
 end
 
 gem "nokogiri", ">= 1.6.7.1"
