@@ -91,8 +91,7 @@ end
 
 group :test do
   gem "database_rewinder"
-  gem "webmock", git: "https://github.com/bblimke/webmock.git"
-  gem "vcr"
+  gem "webmock"
 end
 
 gem "nokogiri", ">= 1.6.7.1"
