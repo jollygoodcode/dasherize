@@ -440,7 +440,7 @@ DEPENDENCIES
   quiet_assets
   rack-cors
   rack-livereload
-  rails (= 4.2.5)
+  rails (~> 4.2.5)
   rails_12factor
   rails_utils
   recipient_interceptor
