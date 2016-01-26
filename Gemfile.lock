@@ -86,7 +86,7 @@ GEM
     dalli (2.7.5)
     database_rewinder (0.5.3)
     debug_inspector (0.0.2)
-    devise (3.5.3)
+    devise (3.5.5)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -409,7 +409,7 @@ DEPENDENCIES
   coffee-rails
   dalli
   database_rewinder
-  devise
+  devise (>= 3.5.4)
   dotenv-rails
   email_spec
   factory_girl_rails
