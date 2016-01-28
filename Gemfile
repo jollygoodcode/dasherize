@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.3.0"
 
-gem "rails", "~> 4.2.5"
+gem "rails", "~> 4.2.5.1"
 
 # Server and Database
 gem "puma"
@@ -95,3 +95,5 @@ group :test do
 end
 
 gem "nokogiri", ">= 1.6.7.1"
+
+gem "rails-html-sanitizer", "~> 1.0.3"
