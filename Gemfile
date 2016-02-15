@@ -14,7 +14,7 @@ gem "sass-rails"
 gem "uglifier"
 gem "coffee-rails"
 gem "jquery-rails"
-gem "turbolinks", github: "rails/turbolinks"
+gem "turbolinks", git: "https://github.com/turbolinks/turbolinks-classic.git"
 gem "jquery-turbolinks"
 
 gem "materialize-sass"
