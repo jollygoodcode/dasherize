@@ -93,7 +93,3 @@ group :test do
   gem "database_rewinder"
   gem "webmock"
 end
-
-gem "nokogiri", ">= 1.6.7.1"
-
-gem "rails-html-sanitizer", "~> 1.0.3"
