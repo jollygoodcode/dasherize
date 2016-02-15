@@ -14,7 +14,7 @@ gem "sass-rails"
 gem "uglifier"
 gem "coffee-rails"
 gem "jquery-rails"
-gem "turbolinks", github: "rails/turbolinks"
+gem "turbolinks", git: "https://github.com/turbolinks/turbolinks-classic.git"
 gem "jquery-turbolinks"
 
 gem "materialize-sass"
@@ -93,7 +93,3 @@ group :test do
   gem "database_rewinder"
   gem "webmock"
 end
-
-gem "nokogiri", ">= 1.6.7.1"
-
-gem "rails-html-sanitizer", "~> 1.0.3"
