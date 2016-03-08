@@ -12,7 +12,7 @@ module APIHelper
     stub_request(
       :get, "https://api.github.com/repos/jollygoodcode/twemoji/issues?per_page=100"
     ).with(
-      headers: { "User-Agent" => "Octokit Ruby Gem 4.2.0" }
+      headers: { "User-Agent" => "Octokit Ruby Gem #{Octokit::VERSION}" }
     ).to_return(
       status: 200, body: IO.read("spec/fixtures/github/twemoji.json"),
       headers: { "Content-Type" => "application/json" }
@@ -21,7 +21,7 @@ module APIHelper
     stub_request(
       :get, "https://api.github.com/repos/winston/google_visualr/issues?per_page=100"
     ).with(
-      headers: { "User-Agent" => "Octokit Ruby Gem 4.2.0" }
+      headers: { "User-Agent" => "Octokit Ruby Gem #{Octokit::VERSION}" }
     ).to_return(
       status: 200, body: IO.read("spec/fixtures/github/google_visualr.json"),
       headers: { "Content-Type" => "application/json" }
