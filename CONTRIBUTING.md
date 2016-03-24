@@ -37,4 +37,4 @@ Run style checks with `bundle exec rubocop -DR`
 ## Contributor License Agreement
 
 If you submit a contribution to this application's source code, you hereby grant
-it under MIT LICENSE. See [LICENSE](/LICENSE).
+it under MIT LICENSE. See [LICENSE](/LICENSE.md).
