@@ -32,7 +32,7 @@
             li.collection-item.avatar
               = image_tag pr.user.avatar_url, class: "circle"
               span.title.truncate
-                = link_to pr.title, pr.html_url, title: pr.title, target: "_blank"
+                = link_to pr.title, pr.html_url, target: "_blank"
               p
                 = local_time_ago(pr.created_at)
       - else
@@ -51,7 +51,7 @@
             li.collection-item.avatar
               = image_tag is.user.avatar_url, class: "circle"
               span.title.truncate
-                = link_to is.title, is.html_url, title: is.title, target: "_blank"
+                = link_to is.title, is.html_url, target: "_blank"
               p
                 = local_time_ago(is.created_at)
       - else
